@@ -22,8 +22,8 @@ test.describe('Birthday Invite Project', () => {
     await page.goto('/Asian_Bootcamp_2026/3.4%20Birthday%20Invite%20Project/');
 
     // check for Google Maps link
-    const mapsLink = page.locator('a', { hasText: /Google Maps/i });
-    await expect(mapsLink).toBeTruthy();
+    const mapsLink = page.locator('a');
+    await expect(mapsLink).toContainText('Google Maps');
     await expect(mapsLink).toHaveAttribute('href', /google\.com\/maps/);
 
     // check for birthday cake image
